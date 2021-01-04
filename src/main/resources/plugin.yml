@@ -1,0 +1,19 @@
+main: github.AlpsBTE_BungeePlugin.AlpsBTE_BungeePlugin
+version: 1.0
+api-version: 1.12.2
+name: AlpsBTE-BungeePlugin
+author: R3tuxn
+
+commands:
+  yeet:
+    description: yeet a player
+    usage: /yeet <player>
+    permission: alpsbte.yeet
+  ping:
+    description: get your ping to the proxy
+    usage: /ping
+    permission: alpsbte.ping
+  discord:
+    description: get a link to our Discord server
+    usage: /discord
+    permission: alpsbte.discord
