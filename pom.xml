@@ -25,6 +25,7 @@
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>net.md-5</groupId>
             <artifactId>bungeecord-api</artifactId>
@@ -46,7 +47,9 @@
             </resource>
         </resources>
         <!-- IMPORTANT: Plugin Building Path -->
-        <sourceDirectory>src/main/java/io/github/AlpsBTE_BungeePlugin</sourceDirectory>
+        <sourceDirectory>src/main/java/io</sourceDirectory>
+        <!-- IMPORTANT: Output File Name -->
+        <finalName>AlpsBTE-BungeePlugin V1.0</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

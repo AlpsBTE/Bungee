@@ -3,11 +3,15 @@ package github.AlpsBTE_BungeePlugin;
 import github.AlpsBTE_BungeePlugin.commands.CMD_Discord;
 import github.AlpsBTE_BungeePlugin.commands.CMD_Ping;
 import github.AlpsBTE_BungeePlugin.commands.CMD_Yeet;
+import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.Plugin;
 
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.logging.Level;
 
-public class AlpsBTE_BungeePlugin extends Plugin {
+public class AlpsBTE_BungeePlugin extends Plugin implements Listener {
 
     private static AlpsBTE_BungeePlugin plugin;
 
@@ -23,7 +27,23 @@ public class AlpsBTE_BungeePlugin extends Plugin {
         // Listener
         getProxy().getPluginManager().registerListener(this, new EventListener());
 
-        getLogger().log(Level.INFO, "Successfully enabled AlpsBTE-BungeePlugin.");
+        getProxy().registerChannel( "BungeeCord");
+
+        Thread thread = new Thread(() -> {
+            while (true) {
+                try (ServerSocket serverSocket = new ServerSocket(3333)) {
+                    Socket socket = serverSocket.accept();
+                    System.out.println("[Server] >> Connected");
+
+                    new ChatHandler(socket).start();
+                } catch (IOException ex) {
+                    getLogger().log(Level.SEVERE, "Could not connect client to server socket!", ex);
+                }
+            }
+        });
+        thread.start();
+
+        getLogger().log(Level.INFO, "Successfully enabled AlpsBTE-BungeePlugin!");
     }
 
     public static AlpsBTE_BungeePlugin getPlugin() {
