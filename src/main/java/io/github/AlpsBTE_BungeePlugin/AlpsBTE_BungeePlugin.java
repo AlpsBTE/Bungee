@@ -27,17 +27,14 @@ public class AlpsBTE_BungeePlugin extends Plugin implements Listener {
         // Listener
         getProxy().getPluginManager().registerListener(this, new EventListener());
 
-        getProxy().registerChannel( "BungeeCord");
-
         Thread thread = new Thread(() -> {
             while (true) {
                 try (ServerSocket serverSocket = new ServerSocket(3333)) {
                     Socket socket = serverSocket.accept();
-                    System.out.println("[Server] >> Connected");
 
                     new ChatHandler(socket).start();
                 } catch (IOException ex) {
-                    getLogger().log(Level.SEVERE, "Could not connect client to server socket!", ex);
+                    getLogger().log(Level.SEVERE, "Could not connect server to BungeeCord!", ex);
                 }
             }
         });
