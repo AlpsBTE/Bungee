@@ -27,7 +27,7 @@ public class ChatHandler extends Thread {
                 out.writeUTF(message);
 
                 for(ServerInfo server : AlpsBTE_BungeePlugin.getPlugin().getProxy().getServers().values()) {
-                    if(!server.getName().equalsIgnoreCase(playerServer)) {
+                    if(!server.getName().equalsIgnoreCase(playerServer) && !server.getPlayers().isEmpty()) {
                         server.sendData("AlpsBTE-Chat", stream.toByteArray());
                     }
                 }
