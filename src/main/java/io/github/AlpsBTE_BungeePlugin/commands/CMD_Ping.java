@@ -14,10 +14,12 @@ public class CMD_Ping extends Command {
     @Override
     public void execute(CommandSender sender, String[] args) {
         if(sender instanceof ProxiedPlayer) {
-            ProxiedPlayer player = (ProxiedPlayer) sender;
+            if(sender.hasPermission("alpsbte.ping")) {
+                ProxiedPlayer player = (ProxiedPlayer) sender;
 
-            int ping = player.getPing();
-            player.sendMessage(new TextComponent(ChatColor.GRAY + "[" + ChatColor.GOLD + "Ping" + ChatColor.GRAY + "] > " + ChatColor.GREEN + ping));
+                int ping = player.getPing();
+                player.sendMessage(new TextComponent(ChatColor.GRAY + "[" + ChatColor.GOLD + "Ping" + ChatColor.GRAY + "] > " + ChatColor.GREEN + ping));
+            }
         }
     }
 }

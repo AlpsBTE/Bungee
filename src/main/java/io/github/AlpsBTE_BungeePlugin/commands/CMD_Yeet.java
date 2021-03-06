@@ -15,17 +15,19 @@ public class CMD_Yeet extends Command {
     @Override
     public void execute(CommandSender sender, String[] args) {
         if(sender instanceof ProxiedPlayer) {
-            ProxiedPlayer p;
-            try {
-                if(args.length >= 1) {
-                    p = AlpsBTE_BungeePlugin.getPlugin().getProxy().getPlayer(args[0]);
-                } else {
-                    p = (ProxiedPlayer)sender;
-                }
+            if(sender.hasPermission("alpsbte.yeet")) {
+                ProxiedPlayer p;
+                try {
+                    if(args.length >= 1) {
+                        p = AlpsBTE_BungeePlugin.getPlugin().getProxy().getPlayer(args[0]);
+                    } else {
+                        p = (ProxiedPlayer)sender;
+                    }
 
-                p.disconnect(new TextComponent(ChatColor.RED + "You got yeeted from the server!"));
-            } catch (Exception ex) {
-                sender.sendMessage(new TextComponent(ChatColor.DARK_GRAY + "" + ChatColor.BOLD + ">> " + ChatColor.RESET + ChatColor.RED + "Usage: /yeet <player>"));
+                    p.disconnect(new TextComponent(ChatColor.RED + "You got yeeted from the server!"));
+                } catch (Exception ex) {
+                    sender.sendMessage(new TextComponent(ChatColor.DARK_GRAY + "" + ChatColor.BOLD + ">> " + ChatColor.RESET + ChatColor.RED + "Usage: /yeet <player>"));
+                }
             }
         }
     }

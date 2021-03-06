@@ -15,10 +15,12 @@ public class CMD_Discord extends Command {
     @Override
     public void execute(CommandSender sender, String[] args) {
         if(sender instanceof ProxiedPlayer) {
-            ProxiedPlayer player = (ProxiedPlayer) sender;
-            TextComponent message = new TextComponent(new TextComponent(ChatColor.GRAY + "[" + ChatColor.GOLD + "Join the Discord" + ChatColor.GRAY + "] >" + ChatColor.GREEN + " https://discord.gg/vgkspay"));
-            message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://discord.gg/vgkspay"));
-            player.sendMessage(message);
+            if(sender.hasPermission("alpsbte.discord")) {
+                ProxiedPlayer player = (ProxiedPlayer) sender;
+                TextComponent message = new TextComponent(new TextComponent(ChatColor.GRAY + "[" + ChatColor.GOLD + "Join the Discord" + ChatColor.GRAY + "] >" + ChatColor.GREEN + " https://discord.gg/vgkspay"));
+                message.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://discord.gg/vgkspay"));
+                player.sendMessage(message);
+            }
         }
     }
 }
