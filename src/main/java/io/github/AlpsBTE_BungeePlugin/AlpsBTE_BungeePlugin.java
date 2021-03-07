@@ -29,7 +29,7 @@ public class AlpsBTE_BungeePlugin extends Plugin implements Listener {
 
         Thread thread = new Thread(() -> {
             while (true) {
-                try (ServerSocket serverSocket = new ServerSocket(3333)) {
+                try (ServerSocket serverSocket = new ServerSocket(42069)) {
                     Socket socket = serverSocket.accept();
 
                     new ChatHandler(socket).start();
