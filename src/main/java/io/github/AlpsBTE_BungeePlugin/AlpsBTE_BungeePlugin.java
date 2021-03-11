@@ -24,8 +24,6 @@ public class AlpsBTE_BungeePlugin extends Plugin implements Listener {
         getProxy().getPluginManager().registerCommand(this, new CMD_Discord("discord"));
         getProxy().getPluginManager().registerCommand(this, new CMD_Ping("ping"));
 
-        // Listener
-        getProxy().getPluginManager().registerListener(this, new EventListener());
 
         Thread thread = new Thread(() -> {
             while (true) {
