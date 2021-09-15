@@ -1,7 +1,7 @@
-main: github.AlpsBTE_BungeePlugin.AlpsBTE_BungeePlugin
-version: 1.0
+main: com.alpsbte.Bungee.BungeePlugin
+version: 1.1
 api-version: 1.12.2
-name: AlpsBTE-BungeePlugin
+name: AlpsBTE-Bungee
 author: R3tuxn
 
 commands:
