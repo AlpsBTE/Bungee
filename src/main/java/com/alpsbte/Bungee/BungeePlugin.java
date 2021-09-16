@@ -8,6 +8,7 @@ import net.md_5.bungee.api.plugin.Plugin;
 
 import java.io.*;
 import java.net.ServerSocket;
+import java.util.concurrent.CompletableFuture;
 import java.util.logging.Level;
 
 public class BungeePlugin extends Plugin implements Listener {
@@ -24,7 +25,7 @@ public class BungeePlugin extends Plugin implements Listener {
         getProxy().getPluginManager().registerCommand(this, new CMD_Discord("discord"));
         getProxy().getPluginManager().registerCommand(this, new CMD_Ping("ping"));
 
-        getProxy().getScheduler().runAsync(this, () -> {
+        CompletableFuture.runAsync(() -> {
             try {
                 serverSocket = new ServerSocket(42069);
                 while (true) new ChatHandler(serverSocket.accept()).start();
