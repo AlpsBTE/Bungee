@@ -1,8 +1,8 @@
-package com.alpsbte.Bungee;
+package com.alpsbte.bungee;
 
-import com.alpsbte.Bungee.commands.CMD_Discord;
-import com.alpsbte.Bungee.commands.CMD_Ping;
-import com.alpsbte.Bungee.commands.CMD_Yeet;
+import com.alpsbte.bungee.commands.CMD_Discord;
+import com.alpsbte.bungee.commands.CMD_Ping;
+import com.alpsbte.bungee.commands.CMD_Yeet;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.Plugin;
 

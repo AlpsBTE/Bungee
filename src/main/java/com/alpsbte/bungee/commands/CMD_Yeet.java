@@ -1,6 +1,6 @@
-package com.alpsbte.Bungee.commands;
+package com.alpsbte.bungee.commands;
 
-import com.alpsbte.Bungee.BungeePlugin;
+import com.alpsbte.bungee.BungeePlugin;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.chat.TextComponent;

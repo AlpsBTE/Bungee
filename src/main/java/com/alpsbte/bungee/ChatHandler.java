@@ -1,4 +1,4 @@
-package com.alpsbte.Bungee;
+package com.alpsbte.bungee;
 
 import net.md_5.bungee.api.config.ServerInfo;
 
