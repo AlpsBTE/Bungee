@@ -29,7 +29,7 @@ public class BungeePlugin extends Plugin implements Listener {
                 serverSocket = new ServerSocket(42069);
                 while (true) new ChatHandler(serverSocket.accept()).start();
             } catch (IOException ex) {
-                getLogger().log(Level.SEVERE, "Could not bind port to socket!", ex);
+                if (serverSocket == null) getLogger().log(Level.SEVERE, "Could not bind port to socket!", ex);
             }
         });
 
