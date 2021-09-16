@@ -45,7 +45,6 @@ public class BungeePlugin extends Plugin implements Listener {
                 getLogger().log(Level.SEVERE, "Could not unbind port from socket!", ex);
             }
         }
-        super.onDisable();
     }
 
     public static BungeePlugin getPlugin() {
