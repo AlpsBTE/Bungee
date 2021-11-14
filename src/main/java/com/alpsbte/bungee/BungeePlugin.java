@@ -2,6 +2,7 @@ package com.alpsbte.bungee;
 
 import com.alpsbte.bungee.commands.CMD_Discord;
 import com.alpsbte.bungee.commands.CMD_Ping;
+import com.alpsbte.bungee.commands.CMD_ReJoin;
 import com.alpsbte.bungee.commands.CMD_Yeet;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.Plugin;
@@ -24,6 +25,9 @@ public class BungeePlugin extends Plugin implements Listener {
         getProxy().getPluginManager().registerCommand(this, new CMD_Yeet("yeet"));
         getProxy().getPluginManager().registerCommand(this, new CMD_Discord("discord"));
         getProxy().getPluginManager().registerCommand(this, new CMD_Ping("ping"));
+        getProxy().getPluginManager().registerCommand(this,new CMD_ReJoin("re", "alpsbte.rejoin", "rejoin"));
+
+        getProxy().getPluginManager().registerListener(this, new EventListener());
 
         CompletableFuture.runAsync(() -> {
             try {
