@@ -17,6 +17,10 @@ commands:
     description: get a link to our Discord server
     usage: /discord
     permission: alpsbte.discord
+  re:
+    description: quick rejoin
+    usage: /re
+    permission: alpsbte.rejoin
   addbuilder:
     description: add builder permissions to player
     usage: /addbuilder <Name/UUID>
