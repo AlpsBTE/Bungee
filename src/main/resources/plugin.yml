@@ -1,5 +1,5 @@
 main: com.alpsbte.bungee.BungeePlugin
-version: 1.1
+version: 1.2
 api-version: 1.12.2
 name: AlpsBTE-Bungee
 author: R3tuxn
@@ -17,3 +17,11 @@ commands:
     description: get a link to our Discord server
     usage: /discord
     permission: alpsbte.discord
+  addbuilder:
+    description: add builder permissions to player
+    usage: /addbuilder <Name/UUID>
+    permission: alpsbte.reviewer
+  removebuilder:
+    description: remove builder permissions from player
+    usage: /removebuilder <Name/UUID>
+    permission: alpsbte.reviewer

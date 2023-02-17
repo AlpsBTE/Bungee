@@ -6,7 +6,7 @@
 
     <groupId>com.alpsbte</groupId>
     <artifactId>AlpsBTE-Bungee</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
 
     <repositories>
         <!-- Bungeecord API -->
