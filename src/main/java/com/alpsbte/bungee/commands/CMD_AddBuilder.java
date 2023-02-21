@@ -17,13 +17,8 @@ public class CMD_AddBuilder extends Command {
         if(sender.hasPermission("alpsbte.reviewer")) {
             ProxiedPlayer player = (ProxiedPlayer) sender;
             if (args.length == 1) {
-                ProxiedPlayer builderPlayer = ProxyServer.getInstance().getPlayer(args[0]);
-                if (builderPlayer != null) {
-                    ProxyServer.getInstance().getPluginManager().dispatchCommand(ProxyServer.getInstance().getConsole(), "lpb user " + builderPlayer.getUniqueId() + " group add builder");
-                    player.sendMessage(new TextComponent(ChatColor.GRAY + ">> " + ChatColor.GREEN + "Added builder permissions for " + ChatColor.GRAY + builderPlayer.getName() + ChatColor.GREEN + "."));
-                } else {
-                    player.sendMessage(new TextComponent(ChatColor.GRAY + ">> " + ChatColor.RED + "Could not find builder with Name/UUID " + ChatColor.GRAY + args[0] + ChatColor.RED + "."));
-                }
+                ProxyServer.getInstance().getPluginManager().dispatchCommand(ProxyServer.getInstance().getConsole(), "lpb user " + args[0] + " group add builder");
+                player.sendMessage(new TextComponent(ChatColor.GRAY + ">> " + ChatColor.GREEN + "Added builder permissions for " + ChatColor.GRAY + args[0] + ChatColor.GREEN + "."));
             } else {
                 player.sendMessage(new TextComponent(ChatColor.GRAY + ">> " + ChatColor.RED + "Unknown arguments. Use " + ChatColor.GRAY + "/addbuilder <Name/UUID>" + ChatColor.RED + "."));
             }
